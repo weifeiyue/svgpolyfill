@@ -1,13 +1,12 @@
 !function(root, factory) {
     "function" == typeof define && define.amd ? // AMD. Register as an anonymous module unless amdModuleId is set
     define([], function() {
-        return root.svg4everybody = factory();
+        return root.svgpolyfill = factory();
     }) : "object" == typeof module && module.exports ? // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
-    module.exports = factory() : root.svg4everybody = factory();
+    module.exports = factory() : root.svgpolyfill = factory();
 }(this, function() {
-    /*! svg4everybody v2.1.9 | github.com/jonathantneal/svg4everybody */
     function embed(parent, svg, target, use) {
         // if the target exists
         if (target) {
@@ -55,7 +54,7 @@
         }, // test the ready state change immediately
         xhr.onreadystatechange();
     }
-    function svg4everybody(rawopts) {
+    function svgpolyfill(rawopts) {
         function oninterval() {
             // if all <use>s in the array are being bypassed, don't proceed.
             if (numberOfSvgUseElementsToBypass && uses.length - numberOfSvgUseElementsToBypass <= 0) {
@@ -119,5 +118,5 @@
         for (var svg = node; "svg" !== svg.nodeName.toLowerCase() && (svg = svg.parentNode); ) {}
         return svg;
     }
-    return svg4everybody;
+    return svgpolyfill;
 });

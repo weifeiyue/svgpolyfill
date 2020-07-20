@@ -1,8 +1,8 @@
 {
-  "name": "svg4everybody",
-  "version": "2.1.9",
+  "name": "svgpolyfill",
+  "version": "1.0.0",
   "description": "Use external SVG spritemaps in any browser",
-  "main": "dist/svg4everybody.js",
+  "main": "dist/svgpolyfill.js",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -19,11 +19,10 @@
   },
   "scripts": {
     "build": "grunt build",
-    "clean": "git checkout dist/svg4everybody.js && git checkout dist/svg4everybody.min.js && git checkout dist/svg4everybody.legacy.js && git checkout dist/svg4everybody.legacy.min.js",
+    "clean": "git checkout dist/svgpolyfill.js && git checkout dist/svgpolyfill.min.js && git checkout dist/svgpolyfill.legacy.js && git checkout dist/svgpolyfill.legacy.min.js",
     "test": "grunt test",
     "watch": "grunt build:watch"
   },
-  "repository": "jonathantneal/svg4everybody",
   "keywords": [
     "contents",
     "defs",
@@ -48,7 +47,5 @@
     "Oleg Andreyev (https://github.com/oleg-andreyev)",
     "Shawn Allen (https://github.com/shawnbot)"
   ],
-  "license": "CC0-1.0",
-  "bugs": "https://github.com/jonathantneal/svg4everybody/issues",
-  "homepage": "https://github.com/jonathantneal/svg4everybody#readme"
+  "license": "CC0-1.0"
 }

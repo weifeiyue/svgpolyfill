@@ -2,16 +2,16 @@
 <title>SVG for Everybody</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<script src="../dist/svg4everybody.legacy.js"></script>
+<script src="../dist/svgpolyfill.legacy.js"></script>
 <script>
 if (location.hash === '') {
-	svg4everybody();
+	svgpolyfill();
 } else if (location.hash === '#fill') {
-	svg4everybody({
+	svgpolyfill({
 		polyfill: true
 	});
 } else if (location.hash === '#oldie') {
-	svg4everybody({
+	svgpolyfill({
 		nosvg: true,
 		polyfill: true
 	});

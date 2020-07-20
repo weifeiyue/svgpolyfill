@@ -15,14 +15,14 @@ module.exports = function (grunt) {
 			},
 			buildfile: {
 				options: {
-					globals: ['LEGACY_SUPPORT', 'svg4everybody'],
+					globals: ['LEGACY_SUPPORT', 'svgpolyfill'],
 					rules: {
 						'no-magic-numbers': [0],
 						'no-unused-vars': [0]
 					}
 				},
 				files: {
-					src: ['lib/svg4everybody.js']
+					src: ['lib/svgpolyfill.js']
 				}
 			}
 		},
@@ -37,14 +37,14 @@ module.exports = function (grunt) {
 			},
 			buildfile: {
 				files: {
-					src: ['lib/svg4everybody.js']
+					src: ['lib/svgpolyfill.js']
 				}
 			}
 		},
 		uglify: {
 			build: {
 				files: {
-					'dist/svg4everybody.js': ['dist/svg4everybody.legacy.js']
+					'dist/svgpolyfill.js': ['dist/svgpolyfill.legacy.js']
 				},
 				options: {
 					beautify: {
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 			},
 			buildmin: {
 				files: {
-					'dist/svg4everybody.min.js': ['dist/svg4everybody.legacy.js']
+					'dist/svgpolyfill.min.js': ['dist/svgpolyfill.legacy.js']
 				},
 				options: {
 					compress: {
@@ -76,7 +76,7 @@ module.exports = function (grunt) {
 			},
 			legacy: {
 				files: {
-					'dist/svg4everybody.legacy.js': ['dist/svg4everybody.legacy.js']
+					'dist/svgpolyfill.legacy.js': ['dist/svgpolyfill.legacy.js']
 				},
 				options: {
 					beautify: {
@@ -94,7 +94,7 @@ module.exports = function (grunt) {
 			},
 			legacymin: {
 				files: {
-					'dist/svg4everybody.legacy.min.js': ['dist/svg4everybody.legacy.js']
+					'dist/svgpolyfill.legacy.min.js': ['dist/svgpolyfill.legacy.js']
 				},
 				options: {
 					compress: {
@@ -110,15 +110,15 @@ module.exports = function (grunt) {
 		umd: {
 			build: {
 				options: {
-					src: 'lib/svg4everybody.js',
-					dest: 'dist/svg4everybody.legacy.js',
-					globalAlias: 'svg4everybody',
-					objectToExport: 'svg4everybody'
+					src: 'lib/svgpolyfill.js',
+					dest: 'dist/svgpolyfill.legacy.js',
+					globalAlias: 'svgpolyfill',
+					objectToExport: 'svgpolyfill'
 				}
 			}
 		},
 		watch:  {
-			files: ['lib/svg4everybody.js'],
+			files: ['lib/svgpolyfill.js'],
 			tasks: ['test', 'build']
 		}
 	});

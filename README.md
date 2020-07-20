@@ -7,18 +7,18 @@
 To use it now, include the script in your document.
 
 ```html
-<script src="/path/to/svg4everybody.js"></script>
-<script>svg4everybody(); // run it now or whenever you are ready</script>
+<script src="/path/to/svgpolyfill.js"></script>
+<script>svgpolyfill(); // run it now or whenever you are ready</script>
 ```
 
 To support Internet Explorer 6-8, include the legacy script instead.
 
 ```html
-<script src="/path/to/svg4everybody.legacy.js"></script>
-<script>svg4everybody(); // run it now or whenever you are ready</script>
+<script src="/path/to/svgpolyfill.legacy.js"></script>
+<script>svgpolyfill(); // run it now or whenever you are ready</script>
 ```
 
-_As of v2.0.0, you must manually call `svg4everybody()`. If you are using an AMD/CommonJS dependency loader then you may call it within the callback closure._
+_As of v2.0.0, you must manually call `svgpolyfill()`. If you are using an AMD/CommonJS dependency loader then you may call it within the callback closure._
 
 IE 6-8 require you to put the script in the `<head>` in order to shiv `<svg>` and `<use>` elements. For best results in IE, set [X-UA-Compatible] to `ie=edge`. This can be done with a response header from the server or the following HTML in the `<head>`.
 
@@ -83,7 +83,7 @@ Browsers not supporting SVG fallback to images.
 By default, fallback images point to a PNG file in the same location as the SVG, only with the `#` hash replaced by a `.` dot and then appended with a `.png` extension. If you want to change this behavior, you can define your own fallback.
 
 ```js
-svg4everybody({
+svgpolyfill({
 	fallback: function (src, svg, use) {
 		// src: current href String 
 		// svg: current SVG Element 
@@ -97,7 +97,7 @@ svg4everybody({
 All `<use>` elements that are descendants of an `<svg>` are checked for external content. If you want to change this behavior, you can define your own validator.
 
 ```js
-svg4everybody({
+svgpolyfill({
 	validate: function (src, svg, use) {
 		// src: current href String 
 		// svg: current SVG Element 
@@ -111,7 +111,7 @@ svg4everybody({
 You can override whether the script polyfills External Content at all (`polyfill`), or whether SVG should even be used over fallback images (`nosvg`).
 
 ```js
-svg4everybody({
+svgpolyfill({
 	nosvg: true, // shiv <svg> and <use> elements and use image fallbacks
 	polyfill: true // polyfill <use> elements for External Content
 });
@@ -211,18 +211,3 @@ Use a tool like [SVGO] to optimize SVG spritemaps.
 $ [sudo] npm install -g svgo
 $ svgo spritemap.svg
 ```
-
-[ci]:      https://travis-ci.org/jonathantneal/svg4everybody
-[ci-img]:  https://img.shields.io/travis/jonathantneal/svg4everybody.svg
-[npm]:     https://www.npmjs.com/package/svg4everybody
-[npm-img]: https://img.shields.io/npm/v/svg4everybody.svg
-
-[all browsers]: http://caniuse.com/svg
-[David Storey]: https://twitter.com/dstorey/status/626514631884804096
-[dreams came true]: https://dev.windows.com/en-us/microsoft-edge/platform/changelog/desktop/10586/?compareWith=10240
-[SVG External Content]: http://css-tricks.com/svg-sprites-use-better-icon-fonts/##Browser+Support
-[SVG for Everybody]: https://github.com/jonathantneal/svg4everybody
-[SVGO]: https://github.com/svg/svgo
-[track progress]: http://dev.modern.ie/platform/status/svgexternalcontent/?filter=f3e0000bf&search=svg
-[vote for attention]: https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6263916-svg-external-content
-[X-UA-Compatible]: http://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible
